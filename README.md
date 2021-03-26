@@ -1,2 +1,2 @@
 # PowerPrivesc - Your AIO FUD Powershell Privesc Tool
-Work on progress,just need some testing and it should be ready.
+Now the code is ready to test,idk if its going to work or not,im going to test it ASAP
