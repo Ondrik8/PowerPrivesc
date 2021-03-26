@@ -13,7 +13,7 @@ This script itself is also "Clean"
 THIS SCRIPT ONLY SUPPORT WINDOWS 10!!!
 Can go up to SYSTEM from normal user
 Author: GetRektBoy724
-Version : v0.2
+Version : v1.0.0
 Required Dependencies: None  
 Optional Dependencies: None  
 .DESCRIPTION
