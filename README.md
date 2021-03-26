@@ -25,6 +25,7 @@ And also,dont even worry of your script is getting caught by AVs,we take care of
 # Requirements
 - Internet Connection (On The Computer Where You Use This Script)
 # Usage
+After importing the script with `Import-Module` or invoke the script with `.\Invoke-PowerPrivesc.ps1` or *invoking it remotely*,this is the options you have
 ```
 PARAMETER ScriptLink
 The link that goes into the script
