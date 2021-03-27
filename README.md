@@ -47,4 +47,4 @@ Description
 Run the Script as Administrator with window not hidden
 ```
  # To-do List
-- Fix -HideWindows switch feature
+
