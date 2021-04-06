@@ -31,7 +31,6 @@ PARAMETER
 The link that goes into the script
 - ToPrivilege
 The privilege you want,it can be Administrator or SYSTEM
-SWITCH 
 - HideWindow
 Use the switch to hide Powershell windows,By default,this tool shows the window
 EXAMPLE
